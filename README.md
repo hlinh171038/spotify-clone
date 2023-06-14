@@ -1,1 +1,2 @@
-1.set up layout
+2.setup database
+password:QOjmVNT2keqLPMyF
