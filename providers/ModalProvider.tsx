@@ -1,8 +1,14 @@
 "use client"
 
+import AuthModal from "@/components/AuthModal";
+import Modal from "@/components/Modal";
+
 import { useEffect, useState } from "react"
 
+
 const ModalProvider =() =>{
+
+    // check is mounted (ensure model not be seen or open during serside rendering)
     const [isMounted,setIsMounted] = useState(false);
 
     // prevent error form model use serverside rendering
@@ -21,7 +27,7 @@ const ModalProvider =() =>{
 
     return  (
         <>
-            Modals!
+            <AuthModal/>
         </>
     )
 }
