@@ -2,6 +2,7 @@
 
 
 password.txt
+tokens.txt
 # dependencies
 /node_modules
 /.pnp
