@@ -13,7 +13,7 @@ import {useState} from 'react';
  const SupabaseProvider:React.FC<SupabaseProviderProps> =({children}) =>{
     const [supabaseClient] = useState(()=>
     // use method create client componet form auth-helper/nextjs with type database
-    createClientComponentClient<Database>()
+        createClientComponentClient<Database>()
     );
 
     return (
