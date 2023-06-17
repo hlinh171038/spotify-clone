@@ -1,25 +1,9 @@
-6.loading all songs
-   1. (site) page.tsx --> 
-   //mean this page not be cached and data allway up to data
-    export const revalidate = 0  
-    2. load song in our server component
-      (page.tsx) -- > want to get song from supabase to show 
-      --> (action/getSongs) --> ok
-      -->(page.tsx) --. pass props(songs) --> PageContent.tsx
-      -->(PageContent.tsx) --> usedata (songs) --> map SongItem
-      -->(SongItem.tsx) --> have Image 
-         - go to next.config.js to pass domain for image
-         - create hooks to load image (useLoadImage.ts) -->take url
-      -->(SongItem.tsx) -->use hooks image and pass data
+7.search song
+(create the function to fetching song defend on title)
 
-      ----------------------------------
-   3. load image and data song to sidebar
-      -->(sidebar.tsx) --> take data (song) -->pass props to Library.tsx
-      -->(Library.tsx) map MeidaItem.tsx 
-      --->( MeidaItem.tsx ) use data and image
-
-
-      // note middleware for
-      this file exist because we did not add ant restriction for authentication user to able to load song
-       but this way if you change it going to work with authenticaiton users
-
+1. create router search --> file app/search (we want to use data search from supabase base on title)
+2. create getSongsByTitle.ts --> get songs revice title from searchParams method (.ilike('title',`%${title}%`))
+3. create SearchInput to interact and take value from user
+   - USE MPN I QUERY-STRING to take url params
+   -(debounce.ts) use debounce hook to make sure that it refesh after 500 ms after user typing done
+4. create SearchContent to map songs (base on searchparams take from url(SearchInput.tsx))
