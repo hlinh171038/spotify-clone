@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import MediaItem from './MediaItem';
 import LikeButton from './LikeButton';
 import { toast } from 'react-hot-toast';
+import useOnPLay from '@/hooks/useOnPLay';
 
 
 interface LikedContentProps {
@@ -17,7 +18,7 @@ const LikedContent:React.FC<LikedContentProps> =({
 
     const router = useRouter();
     const {isLoading, user} = useUser()
-
+    const onPlay = useOnPLay(songs)
    useEffect(()=>{
     // havenot login replace / 
     if(!isLoading && !user) {
@@ -53,7 +54,7 @@ const LikedContent:React.FC<LikedContentProps> =({
                     >
                         <div className='flex-1'>
                             <MediaItem 
-                                onClick={()=>{}}
+                                onClick={(id:string)=>onPlay(id)}
                                 data={song}
                             />
                         </div>

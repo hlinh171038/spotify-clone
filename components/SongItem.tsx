@@ -17,7 +17,7 @@ const SongItem:React.FC<SongItemProps> =({
 
    const imagePath = useLoadImage(data)
     return  <div
-                onClick={()=>{}}
+                onClick={() => onClick(data.id)}
                 className="
                     relative
                     group
