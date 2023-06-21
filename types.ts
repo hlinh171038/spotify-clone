@@ -23,12 +23,12 @@ export interface UserDetails {
 };
 
 export interface Product {
-    is:string;
+    id:string;
     active?:boolean;
     name?:string;
     description?:string;
     image?:string;
-    matadata?:Stripe.Metadata;
+    metadata?:Stripe.Metadata;
 }
 export interface Price {
     id:string;
